@@ -1,0 +1,8 @@
+com/example/weatherapi/model/WeatherResponse.class
+com/example/weatherapi/service/WeatherService.class
+com/example/weatherapi/controller/WeatherController.class
+com/example/weatherapi/model/WeatherResponse$CurrentWeather.class
+com/example/weatherapi/model/GeocodingResponse$GeocodingResult.class
+com/example/weatherapi/WeatherApiApplication.class
+com/example/weatherapi/model/GeocodingResponse.class
+com/example/weatherapi/model/WeatherResponse$CurrentUnits.class
